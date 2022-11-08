@@ -33,7 +33,7 @@ function Students() {
           </thead>
           <tbody>
             {clients?.map((client: any, index: number) => (
-              <tr key={client.id} onClick={(e) => {alert('cool')}} className="cursor-pointer">
+              <tr key={client.id} onClick={(e) => {alert('cool')}} className="cursor-pointer hover:bg-dark-90">
                 <td>{index + 1}</td>
                 <td><img src="https://api.lorem.space/image/face" alt="étudiant" height={34} className="w-20 h-20 p-0 rounded-full object-cover"/></td>
                 <td>{client.lastName}</td>
