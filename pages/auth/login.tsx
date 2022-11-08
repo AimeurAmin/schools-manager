@@ -108,8 +108,6 @@ const Login = () => {
           className='border-none rounded bg-blue-500 text-white-100 font-bold py-3 px-10'
         >{isLoading ? 'loading...' : 'Connectez-vous'}</button>
         <br />
-        
-        {err}
       </form>
     </div>
   )
