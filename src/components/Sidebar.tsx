@@ -2,14 +2,15 @@ import { HiHome } from "react-icons/hi";
 import { MdPointOfSale } from "react-icons/md";
 import { BsPeopleFill  } from "react-icons/bs";
 import { FaChalkboardTeacher } from 'react-icons/fa'
-
-
 import { RiLogoutBoxFill } from "react-icons/ri";
 import SidebarItem from "@components/SidebarItem";
 import logo from "../assets/imgs/Logo-market-manager.png";
 import Image from "next/image";
+import { logOut } from "src/features/authentication/auth.slice";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="h-full w-72 bg-dark-100 relative shadow-custom-h border-black-100">
       <Image src={logo} alt="Market Manager" className="h-15 mx-auto mb-6 my-10 py-1" />
@@ -23,9 +24,9 @@ const Sidebar = () => {
       <SidebarItem
         Icon={RiLogoutBoxFill}
         text="Déconnecter"
-        href="/login"
-        onClick={() => {
-          localStorage.removeItem('token')
+        href="/auth/login"
+        onClick={() => {        
+          dispatch(logOut());
         }}
         className="absolute bottom-0"
       />

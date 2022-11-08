@@ -20,6 +20,6 @@
       "@layouts/*": ["src/layouts/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/posts/index.js"],
   "exclude": ["node_modules"]
 }

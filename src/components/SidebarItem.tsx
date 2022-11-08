@@ -12,7 +12,7 @@ interface Props {
   className?: string;
 }
 
-const SidebarItem = ({ Icon, size = 26, text,  href, className = "" }: Props) => {
+const SidebarItem = ({ Icon, size = 26, text,  href, className = "", onClick }: Props) => {
   const router = useRouter();
 
   const selectedPath = "bg-dark-60 mr-20";
@@ -20,6 +20,9 @@ const SidebarItem = ({ Icon, size = 26, text,  href, className = "" }: Props) =>
 
   const handleClick = (e: any) => {
     e.preventDefault()
+    if(onClick) {
+      onClick();
+    }
     router.push(href)
   }
   return (
