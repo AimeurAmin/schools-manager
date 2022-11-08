@@ -60,6 +60,8 @@
       td {
         img {
           display: initial;
+          width: 65px;
+          height: 65px;
         }
         svg {
           display: initial;
@@ -67,7 +69,7 @@
         text-align: center;
         height: 50px;
         text-align: center;
-        padding-block: 15px;
+        padding-block: 10px;
 
         &:first-child {
           width: 70px;
