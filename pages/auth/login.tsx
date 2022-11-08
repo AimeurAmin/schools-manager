@@ -1,3 +1,4 @@
+import Alert from '@components/Alert';
 import Input from '@components/Input';
 import { useFormik } from 'formik';
 import { useRouter } from 'next/router';
@@ -11,7 +12,7 @@ import {useLoginMutation} from '../../src/features/authentication/authApi.slice'
 const Login = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const [login, { isLoading }] = useLoginMutation();
+  const [login, { isLoading, error }] = useLoginMutation();
   const [err, setErr] = useState<string | undefined>(undefined);
 
 
@@ -67,6 +68,8 @@ const Login = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-dark-100">
+      {error  && <Alert message={`${error.status === 401 ? 'E-mail ou mot de passe incorrect!' : 'Erreur inconnue!'}`} type='error'/>}
+
       <form onSubmit={formik.handleSubmit} className="bg-dark-90 text-dark-90 p-10 flex flex-col justify-center items-center w-5/12 rounded-2xl">
         <div className="flex flex-col relative pb-6 mb-3 w-7/12">
           <Input>
