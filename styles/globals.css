@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Itim";
+  src: local("Itim"), url(./fonts/Itim-Regular.ttf) format("truetype");
+}
 
 html,
 body {
@@ -18,6 +22,9 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: Itim, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-color-scheme: dark) {
