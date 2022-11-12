@@ -4,21 +4,35 @@ import { RiDeleteBin5Line, RiFileList2Line } from "react-icons/ri";
 import { useEffect } from "react";
 import { useGetStudentsQuery } from "src/features/students/students.service";
 import getAge from "src/utils/getAge";
+import Input from "@components/Input";
+import { BsSearch } from "react-icons/bs";
+import Paginator from "@components/Paginator";
 
 
 function Students() {
   const {data: {data: clients} = {}, isLoading, isError, error} = useGetStudentsQuery();
 
   useEffect(() => {
-    console.log('data');
-    console.log(clients);
-    
     
   }, [clients])
 
   return (
-    <div className="flex flex-col h-full justify-center items-center">
+    <div className="flex flex-col h-full items-center">
       {isLoading? 'Loading...' : (
+        <div className="py-4">
+          <div className="flex justify-between pb-4">
+            <Input className="text-dark-70 w-10/12">
+              <BsSearch size={22} className="mx-2"/>
+              <input 
+                type="text" placeholder='Rechercher un étudiant.' name='filter' id='filter'
+                className={`bg-transparent w-full outline-none ml-2 text-dark-70`}
+              />
+            </Input> 
+            <button
+              className='border-none rounded bg-blue-500 text-white-100 font-bold py-3 text-center w-60'
+              onClick={() => alert("coming soon...")}
+            >Ajouter un étudiant</button>
+          </div>
         <Table>
           <thead>
             <tr>
