@@ -47,7 +47,7 @@ function Students() {
           </thead>
           <tbody>
             {clients?.map((client: any, index: number) => (
-              <tr key={client.id} onClick={(e) => {alert('cool')}} className="cursor-pointer hover:bg-dark-90">
+                <tr key={client.id} onClick={(e) => {alert('coming soon... (details)')}} className="cursor-pointer hover:bg-dark-90">
                 <td>{index + 1}</td>
                 <td><img src="https://api.lorem.space/image/face" alt="étudiant" height={34} className="w-20 h-20 p-0 rounded-full object-cover"/></td>
                 <td>{client.lastName}</td>
@@ -59,11 +59,13 @@ function Students() {
                       color="#DC6F40"
                       size={20}
                       style={{ marginInlineEnd: 10, cursor: "pointer" }}
+                        onClick={() => alert('comming soon... (update)')}
                   />
                   <RiDeleteBin5Line
                       color="#FF4337"
                       size={20}
                       style={{ cursor: "pointer" }}
+                        onClick={() => alert('coming soon... (delete)')}
                   />
                   </td>
               </tr>
