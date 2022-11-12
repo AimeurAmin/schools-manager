@@ -55,7 +55,7 @@ const Login = () => {
       }catch(err: any) {
         
         const error = JSON.parse(err.message);
-        console.log(error);
+        console.error(error);
         if(error.status === 401) {
           setErr('Email or Password entered are incorrect')
         }else {
